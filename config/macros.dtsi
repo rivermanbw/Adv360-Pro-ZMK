@@ -1,3 +1,54 @@
+  // German umlauts for Windows en-US layout
+  // Uses Alt code input: Hold Alt, type numeric code on numpad, release Alt
+  de_a_umlaut: de_a_umlaut {
+    compatible = "zmk,behavior-macro";
+    label = "ä";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N8>
+      , <&macro_release &kp LALT>
+      ;
+  };
+  de_o_umlaut: de_o_umlaut {
+    compatible = "zmk,behavior-macro";
+    label = "ö";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>
+      , <&macro_release &kp LALT>
+      ;
+  };
+  de_u_umlaut: de_u_umlaut {
+    compatible = "zmk,behavior-macro";
+    label = "ü";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N5 &kp KP_N2>
+      , <&macro_release &kp LALT>
+      ;
+  };
+  de_sharp_s: de_sharp_s {
+    compatible = "zmk,behavior-macro";
+    label = "ß";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N3>
+      , <&macro_release &kp LALT>
+      ;
+  };
+
   macro_quotes: macro_quotes {
     compatible = "zmk,behavior-macro";
     label = "macro_quotes";

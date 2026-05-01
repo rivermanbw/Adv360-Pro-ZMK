@@ -14,12 +14,6 @@
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
-      unicode_ae: unicode_ae {
-          compatible = "zmk,behavior-unicode";
-          label = "Unicode AE";
-          #binding-cells = <0>;
-          unicode = <0x00E4>; // ä
-      };
      /**/
       /* hm: homerow_mods { */
       /*     compatible = "zmk,behavior-hold-tap"; */
@@ -47,19 +41,8 @@
       retro-tap;
       hold-while-undecided;
     };
-    /* macros { */
-    /*   ae: ae { */
-    /*     compatible = "zmk,behavior-macro"; */
-    /*     #binding-cells = <0>; */
-    /*     wait-ms = <10>; */
-    /*     tap-ms = <10>; */
-    /*     bindings */
-    /*       = <&macro_press   &kp LALT> */
-    /*       , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N8> */
-    /*       , <&macro_release &kp LALT> */
-    /*       ; */
-    /*   }; */
-    /* }; */
+    macros {
+    };
   keymap {
     compatible = "zmk,keymap";
 
@@ -67,8 +50,8 @@
       display-name = "Base";
       bindings = <
         &kp EN_EQUAL &kp EN_N1    &kp EN_N2   &kp EN_N3   &kp EN_N4     &kp EN_N5 &tog 1                                                           &mo 3 &kp EN_N6 &kp EN_N7 &kp EN_N8    &kp EN_N9   &kp EN_N0   &kp EN_MINUS
-        &kp TAB   &kp EN_Q     &kp EN_W    &kp EN_E    &kp EN_R      &kp EN_T  &kp DE_SZ                                                            &kp DE_O_UMLAUT &kp EN_Y  &kp EN_U  &kp EN_I     &kp EN_O    &kp EN_P    &kp EN_BSLH
-        &kp ESC   &mt LGUI A    &mt LALT S    &mt LSHIFT D    &mt LCTRL F      &kp EN_G  &kp &unicode_ae            &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &kp DE_U_UMLAUT &kp EN_H  &mt RCTRL J  &mt RALT K  &mt RSHIFT L &mt RGUI SEMI &kp EN_SQT
+        &kp TAB   &kp EN_Q     &kp EN_W    &kp EN_E    &kp EN_R      &kp EN_T  &de_sharp_s                                                            &de_o_umlaut &kp EN_Y  &kp EN_U  &kp EN_I     &kp EN_O    &kp EN_P    &kp EN_BSLH
+        &kp ESC   &mt LGUI A    &mt LALT S    &mt LSHIFT D    &mt LCTRL F      &kp EN_G  &de_a_umlaut            &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           &de_u_umlaut &kp EN_H  &mt RCTRL J  &mt RALT K  &mt RSHIFT L &mt RGUI SEMI &kp EN_SQT
         &kp LSHFT &kp EN_Z     &kp EN_X    &kp EN_C    &kp EN_V      &kp EN_B                            &kp HOME &kp PG_UP                           &kp EN_N  &kp EN_M  &kp EN_COMMA &kp EN_DOT  &kp EN_FSLH &kp RSHFT
         &mo 2     &kp EN_GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END  &kp PG_DN &kp ENTER &kp SPACE              &kp DOWN &kp UP  &kp EN_LBKT &kp EN_RBKT &mo 2
       >;
