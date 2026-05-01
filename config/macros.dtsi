@@ -12,6 +12,26 @@
       , <&macro_release &kp LALT>
       ;
   };
+  de_a_umlaut_cap: de_a_umlaut_cap {
+    compatible = "zmk,behavior-macro";
+    label = "Ä";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>
+      , <&macro_release &kp LALT>
+      ;
+  };
+  de_a_umlaut_morph: de_a_umlaut_morph {
+    compatible = "zmk,behavior-mod-morph";
+    label = "ä/Ä";
+    #binding-cells = <0>;
+    bindings = <&de_a_umlaut>, <&de_a_umlaut_cap>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  };
+
   de_o_umlaut: de_o_umlaut {
     compatible = "zmk,behavior-macro";
     label = "ö";
@@ -24,6 +44,26 @@
       , <&macro_release &kp LALT>
       ;
   };
+  de_o_umlaut_cap: de_o_umlaut_cap {
+    compatible = "zmk,behavior-macro";
+    label = "Ö";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N4>
+      , <&macro_release &kp LALT>
+      ;
+  };
+  de_o_umlaut_morph: de_o_umlaut_morph {
+    compatible = "zmk,behavior-mod-morph";
+    label = "ö/Ö";
+    #binding-cells = <0>;
+    bindings = <&de_o_umlaut>, <&de_o_umlaut_cap>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  };
+
   de_u_umlaut: de_u_umlaut {
     compatible = "zmk,behavior-macro";
     label = "ü";
@@ -36,6 +76,26 @@
       , <&macro_release &kp LALT>
       ;
   };
+  de_u_umlaut_cap: de_u_umlaut_cap {
+    compatible = "zmk,behavior-macro";
+    label = "Ü";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N0>
+      , <&macro_release &kp LALT>
+      ;
+  };
+  de_u_umlaut_morph: de_u_umlaut_morph {
+    compatible = "zmk,behavior-mod-morph";
+    label = "ü/Ü";
+    #binding-cells = <0>;
+    bindings = <&de_u_umlaut>, <&de_u_umlaut_cap>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  };
+
   de_sharp_s: de_sharp_s {
     compatible = "zmk,behavior-macro";
     label = "ß";
@@ -48,13 +108,32 @@
       , <&macro_release &kp LALT>
       ;
   };
+  de_sharp_s_cap: de_sharp_s_cap {
+    compatible = "zmk,behavior-macro";
+    label = "ẞ";
+    #binding-cells = <0>;
+    wait-ms = <50>;
+    tap-ms = <20>;
+    bindings
+      = <&macro_press   &kp LALT>
+      , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N7>
+      , <&macro_release &kp LALT>
+      ;
+  };
+  de_sharp_s_morph: de_sharp_s_morph {
+    compatible = "zmk,behavior-mod-morph";
+    label = "ß/ẞ";
+    #binding-cells = <0>;
+    bindings = <&de_sharp_s>, <&de_sharp_s_cap>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  };
 
   macro_quotes: macro_quotes {
     compatible = "zmk,behavior-macro";
     label = "macro_quotes";
     #binding-cells = <0>;
     bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
-  };
+  };;
   macro_dquotes: macro_dquotes {
     compatible = "zmk,behavior-macro";
     label = "macro_dquotes";
